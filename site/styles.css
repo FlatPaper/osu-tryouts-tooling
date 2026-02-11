@@ -68,3 +68,27 @@ td:first-child {
 .average-section table {
     background: white;
 }
+
+.dropped-table {
+    background: #fff5f5;
+    border: 1px solid #cc4444;
+    min-width: 220px;
+}
+
+.dropped-table h3 {
+    color: #cc0000;
+}
+
+.dropped-highlight {
+    background: #ffe0e0;
+    font-weight: bold;
+}
+
+.average-section td:nth-child(4) {
+    color: #b00000;
+    font-weight: 500;
+}
+
+.average-section td:nth-child(5) {
+    color: #006600;
+}
