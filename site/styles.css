@@ -1,0 +1,70 @@
+body {
+    font-family: system-ui, Arial, sans-serif;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    max-width: 400px;
+}
+
+.maps-row {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.map-table {
+    background: white;
+    border: 1px solid #ccc;
+    min-width: 220px;
+}
+
+.map-table h3 {
+    margin: 6px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+    white-space: nowrap;
+}
+
+th {
+    background: #d9ebf9;
+    text-align: center;
+}
+
+td {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+.average-section {
+    max-width: 500px;
+}
+
+.average-section table {
+    background: white;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>osu! Tryouts Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h1>osu! Tryouts Dashboard</h1>
+
+<div class="controls">
+    <label>
+        Drop bottom <span id="dropValue">0</span> score(s) per player
+    </label>
+    <input type="range" id="dropSlider" min="0" max="10" value="0" />
+</div>
+
+<!-- Row 1: All map tables -->
+<div id="maps-row" class="maps-row"></div>
+
+<!-- Row 2: Average table -->
+<div id="average-section"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
