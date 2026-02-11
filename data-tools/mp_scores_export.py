@@ -59,7 +59,8 @@ def calc_acc(score: dict) -> float:
     c50 = int(score["count50"])
     c100 = int(score["count100"])
     c300 = int(score["count300"])
-    total_hits = (c50 + c100 + c300)
+    cmiss = int(score["countmiss"])
+    total_hits = (c50 + c100 + c300 + cmiss)
     if total_hits == 0:
         return 0.0
     weighted_hits = (
