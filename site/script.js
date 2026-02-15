@@ -2,9 +2,9 @@ let rawData = null;
 let selectedPlayers = new Set();
 let selectedMaps = new Set();
 
-const dataFile = window.DATA_FILE || "../data-tools/data/osu_scores_low_sr.json";
+const dataFile = window.DATA_FILE || "data/osu_scores_low_sr.json";
 
-fetch(`../data-tools/data/${dataFile}`)
+fetch(`data/${dataFile}`)
     .then(res => res.json())
     .then(data => {
         rawData = data;
