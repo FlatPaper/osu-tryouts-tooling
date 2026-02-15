@@ -16,8 +16,8 @@ API_BEATMAP_URL = "https://osu.ppy.sh/api/get_beatmaps"
 API_USER_URL = "https://osu.ppy.sh/api/get_user"
 
 MP_LINKS_FILE = "mp_links.txt"
-MAPPOOL_FILE = "mappool.json"
-OUTPUT_FILE = "data/osu_scores.json"
+MAPPOOL_FILE = "high_sr_pool.json"
+OUTPUT_FILE = "data/osu_scores_high_sr.json"
 
 REQUEST_DELAY = 0.5
 
@@ -107,6 +107,9 @@ def build_db(mp_links: list[str], mappool: dict) -> dict:
             for score in game["scores"]:
                 uid = int(score["user_id"])
                 uid_str = str(uid)
+
+                if int(score["score"]) <= 1000:
+                    continue
 
                 if uid_str not in db["users"]:
                     db["users"][uid_str] = {
