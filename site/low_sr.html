@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>osu! Tryouts Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<nav style="margin-bottom: 15px;">
+    <a href="index.html">← Back to Selection</a>
+</nav>
+
+<h1>osu! Tryouts Dashboard</h1>
+
+<div class="controls">
+    <h3>Filter Players</h3>
+
+    <div class="player-buttons">
+        <button id="select-all">Select All</button>
+        <button id="clear-all">Clear All</button>
+    </div>
+
+    <div id="player-selector"></div>
+</div>
+
+
+
+<div class="controls">
+    <label>
+        Drop bottom <span id="dropValue">0</span> score(s) per player
+    </label>
+    <input type="range" id="dropSlider" min="0" max="10" value="0" />
+</div>
+
+<!-- Row 1: Map score tables -->
+<div id="maps-row" class="maps-row"></div>
+
+<!-- Row 2: Dropped maps highlight -->
+<div id="dropped-row" class="maps-row"></div>
+
+<!-- Row 3: Average table -->
+<div id="average-section"></div>
+
+<!-- Row 4: Custom Map Leaderboard -->
+<div id="custom-section">
+    <h2>Custom Map Leaderboard</h2>
+    <div id="map-selector"></div>
+    <div id="custom-leaderboard"></div>
+</div>
+
+
+<script>
+    window.DATA_FILE = "osu_scores_low_sr.json";
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

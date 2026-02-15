@@ -2,13 +2,15 @@ let rawData = null;
 let selectedPlayers = new Set();
 let selectedMaps = new Set();
 
+const dataFile = window.DATA_FILE || "../data-tools/data/osu_scores_low_sr.json";
 
-fetch("../data-tools/data/osu_scores.json")
+fetch(`../data-tools/data/${dataFile}`)
     .then(res => res.json())
     .then(data => {
         rawData = data;
         init();
     });
+
 
 function getSlotOrder(slot) {
     if (slot.startsWith("NM")) return 1;
@@ -16,7 +18,11 @@ function getSlotOrder(slot) {
     if (slot.startsWith("HR")) return 3;
     if (slot.startsWith("DT")) return 4;
     if (slot.startsWith("FM")) return 5;
-    if (slot.startsWith("TB")) return 6;
+    if (slot.startsWith("AIM")) return 6;
+    if (slot.startsWith("TAP")) return 7;
+    if (slot.startsWith("GMC")) return 8;
+    if (slot.startsWith("CTL")) return 9;
+    if (slot.startsWith("TB")) return 10;
     return 99;
 }
 
@@ -261,6 +267,40 @@ function renderDashboard(dropCount) {
        ROW 3 — AVERAGE TABLE
        ========================= */
 
+    // Compute placements per map (after drop filtering)
+    const placementByPlayer = {};
+
+    for (const map of maps) {
+
+        const ranking = [];
+
+        for (const userId in players) {
+            if (!selectedPlayers.has(parseInt(userId))) continue;
+
+            const score = players[userId].scores.find(
+                s => s.beatmap_id === map.beatmap_id
+            );
+
+            if (!score) continue;
+            if (dropped.has(`${userId}:${map.beatmap_id}`)) continue;
+
+            ranking.push({
+                userId,
+                score: score.score
+            });
+        }
+
+        ranking.sort((a, b) => b.score - a.score);
+
+        ranking.forEach((entry, index) => {
+            if (!placementByPlayer[entry.userId]) {
+                placementByPlayer[entry.userId] = [];
+            }
+            placementByPlayer[entry.userId].push(index + 1);
+        });
+    }
+
+
     const averages = [];
 
     for (const userId in players) {
@@ -293,16 +333,29 @@ function renderDashboard(dropCount) {
             keptScores.reduce((sum, s) => sum + s.accuracy, 0) /
             keptScores.length;
 
+        const placements = placementByPlayer[userId] || [];
+
+        const avgPlacement = placements.length
+            ? placements.reduce((a, b) => a + b, 0) / placements.length
+            : null;
+
         averages.push({
             username: users[userId]?.username ?? "Unknown",
             avgScore,
             avgAcc,
+            avgPlacement,
             skipped,
             kept
         });
+
     }
 
-    averages.sort((a, b) => b.avgScore - a.avgScore);
+    averages.sort((a, b) => {
+        if (a.avgPlacement == null) return 1;
+        if (b.avgPlacement == null) return -1;
+        return a.avgPlacement - b.avgPlacement; // lower = better
+    });
+
 
 
     avgSection.innerHTML = `
@@ -312,6 +365,7 @@ function renderDashboard(dropCount) {
           <tr>
             <th>#</th>
             <th>Player</th>
+            <th>Average Placement</th>
             <th>Average Score</th>
             <th>Average Acc</th>
             <th>Skipped Maps</th>
@@ -323,6 +377,7 @@ function renderDashboard(dropCount) {
             <tr>
               <td>${i + 1}</td>
               <td>${entry.username}</td>
+              <td>${entry.avgPlacement?.toFixed(2) ?? "—"}</td>
               <td>${Math.round(entry.avgScore).toLocaleString()}</td>
               <td>${entry.avgAcc.toFixed(2)}%</td>
               <td>${entry.skipped.length ? entry.skipped.join(", ") : "—"}</td>
