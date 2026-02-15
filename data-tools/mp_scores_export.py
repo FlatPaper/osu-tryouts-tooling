@@ -76,7 +76,7 @@ def build_db(mp_links: list[str], mappool: dict) -> dict:
     }
     for slot, beatmap_id in mappool.items():
         beatmap_id = int(beatmap_id)
-        print(f"Processing {beatmap_id}")
+        print(f"Processing beatmap {beatmap_id}")
         map_info = get_beatmap(beatmap_id)
         db["maps"][str(beatmap_id)] = {
             "beatmap_id": beatmap_id,
@@ -94,7 +94,7 @@ def build_db(mp_links: list[str], mappool: dict) -> dict:
         if not match_id:
             continue
 
-        print(f"Processing {match_id}")
+        print(f"Processing match {match_id}")
         match = get_match(match_id)
 
         for idx, game in enumerate(match["games"]):
@@ -119,19 +119,36 @@ def build_db(mp_links: list[str], mappool: dict) -> dict:
                     db["players"][uid_str] = {
                         "user_id": uid,
                         "username": db["users"][uid_str]["username"],
-                        "scores": []
+                        "scores": {}
                     }
 
-                db["players"][uid_str]["scores"].append({
+                nxt_score = {
                     "match_id": match_id,
                     "game_id": idx,
                     "beatmap_id": bid,
                     "score": int(score["score"]),
                     "accuracy": calc_acc(score),
                     "mods": int(score["enabled_mods"] or 0),
-                })
+                }
+
+                cur = db["players"][uid_str]["scores"].get(bid_str)
+
+                if not cur or nxt_score["score"] > cur["score"]:
+                    db["players"][uid_str]["scores"][bid_str] = nxt_score
+
+                # db["players"][uid_str]["scores"].append({
+                #     "match_id": match_id,
+                #     "game_id": idx,
+                #     "beatmap_id": bid,
+                #     "score": int(score["score"]),
+                #     "accuracy": calc_acc(score),
+                #     "mods": int(score["enabled_mods"] or 0),
+                # })
 
         sleep(REQUEST_DELAY)
+
+    for player in db["players"].values():
+        player["scores"] = list(player["scores"].values())
 
     return db
 

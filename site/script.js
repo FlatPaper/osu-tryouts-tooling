@@ -81,7 +81,8 @@ function renderDashboard(dropCount) {
 
             mapScores.push({
                 username: users[userId]?.username ?? "Unknown",
-                score: score.score
+                score: score.score,
+                accuracy: score.accuracy
             });
         }
 
@@ -91,29 +92,31 @@ function renderDashboard(dropCount) {
         wrapper.className = "map-table";
 
         wrapper.innerHTML = `
-      <h3>${map.slot}</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Player</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${mapScores.length
-            ? mapScores.map((entry, i) => `
-                <tr>
-                  <td>${i + 1}</td>
-                  <td>${entry.username}</td>
-                  <td>${entry.score.toLocaleString()}</td>
-                </tr>
-              `).join("")
-            : `<tr><td colspan="3">—</td></tr>`
-        }
-        </tbody>
-      </table>
-    `;
+          <h3>${map.slot}</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Score</th>
+                <th>Acc</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${mapScores.length
+                    ? mapScores.map((entry, i) => `
+                    <tr>
+                      <td>${i + 1}</td>
+                      <td>${entry.username}</td>
+                      <td>${entry.score.toLocaleString()}</td>
+                      <td>${entry.accuracy.toFixed(2)}%</td>
+                    </tr>
+                  `).join("")
+                    : `<tr><td colspan="4">—</td></tr>`
+                }
+            </tbody>
+          </table>
+        `;
 
         mapsRow.appendChild(wrapper);
     }
@@ -136,7 +139,8 @@ function renderDashboard(dropCount) {
 
             droppedScores.push({
                 username: users[userId]?.username ?? "Unknown",
-                score: score.score
+                score: score.score,
+                accuracy: score.accuracy
             });
         }
 
@@ -153,6 +157,7 @@ function renderDashboard(dropCount) {
             <th>#</th>
             <th>Player</th>
             <th>Score</th>
+            <th>Acc</th>
           </tr>
         </thead>
         <tbody>
@@ -162,9 +167,10 @@ function renderDashboard(dropCount) {
                   <td>${i + 1}</td>
                   <td>${entry.username}</td>
                   <td>${entry.score.toLocaleString()}</td>
+                  <td>${entry.accuracy.toFixed(2)}%</td>
                 </tr>
               `).join("")
-            : `<tr><td colspan="3">—</td></tr>`
+            : `<tr><td colspan="4">—</td></tr>`
         }
         </tbody>
       </table>
@@ -200,45 +206,54 @@ function renderDashboard(dropCount) {
 
         if (!keptScores.length) continue;
 
-        const avg =
+        const avgScore =
             keptScores.reduce((sum, s) => sum + s.score, 0) /
+            keptScores.length;
+
+        const avgAcc =
+            keptScores.reduce((sum, s) => sum + s.accuracy, 0) /
             keptScores.length;
 
         averages.push({
             username: users[userId]?.username ?? "Unknown",
-            average: avg,
+            avgScore,
+            avgAcc,
             skipped,
             kept
         });
     }
 
-    averages.sort((a, b) => b.average - a.average);
+    averages.sort((a, b) => b.avgScore - a.avgScore);
+
 
     avgSection.innerHTML = `
-    <h2>Average Scores</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Player</th>
-          <th>Average Score</th>
-          <th>Skipped Maps</th>
-          <th>Kept Maps</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${averages.map((entry, i) => `
+      <h2>Average Results</h2>
+      <table>
+        <thead>
           <tr>
-            <td>${i + 1}</td>
-            <td>${entry.username}</td>
-            <td>${Math.round(entry.average).toLocaleString()}</td>
-            <td>${entry.skipped.length ? entry.skipped.join(", ") : "—"}</td>
-            <td>${entry.kept.length ? entry.kept.join(", ") : "—"}</td>
+            <th>#</th>
+            <th>Player</th>
+            <th>Average Score</th>
+            <th>Average Acc</th>
+            <th>Skipped Maps</th>
+            <th>Kept Maps</th>
           </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
+        </thead>
+        <tbody>
+          ${averages.map((entry, i) => `
+            <tr>
+              <td>${i + 1}</td>
+              <td>${entry.username}</td>
+              <td>${Math.round(entry.avgScore).toLocaleString()}</td>
+              <td>${entry.avgAcc.toFixed(2)}%</td>
+              <td>${entry.skipped.length ? entry.skipped.join(", ") : "—"}</td>
+              <td>${entry.kept.length ? entry.kept.join(", ") : "—"}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    `;
+
 }
 
 

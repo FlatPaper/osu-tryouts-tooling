@@ -27,8 +27,19 @@ h1 {
 .map-table {
     background: white;
     border: 1px solid #ccc;
-    min-width: 220px;
+    min-width: 320px;
+    flex-shrink: 0;
 }
+
+.map-table table {
+    width: 100%;
+}
+
+.map-table th,
+.map-table td {
+    padding: 6px 10px;
+}
+
 
 .map-table h3 {
     margin: 6px;
@@ -72,7 +83,8 @@ td:first-child {
 .dropped-table {
     background: #fff5f5;
     border: 1px solid #cc4444;
-    min-width: 220px;
+    min-width: 320px;
+    flex-shrink: 0;
 }
 
 .dropped-table h3 {
@@ -91,4 +103,8 @@ td:first-child {
 
 .average-section td:nth-child(5) {
     color: #006600;
+}
+
+td:nth-child(4) {
+    font-weight: 500;
 }
