@@ -10,6 +10,19 @@
 <h1>osu! Tryouts Dashboard</h1>
 
 <div class="controls">
+    <h3>Filter Players</h3>
+
+    <div class="player-buttons">
+        <button id="select-all">Select All</button>
+        <button id="clear-all">Clear All</button>
+    </div>
+
+    <div id="player-selector"></div>
+</div>
+
+
+
+<div class="controls">
     <label>
         Drop bottom <span id="dropValue">0</span> score(s) per player
     </label>
@@ -24,6 +37,14 @@
 
 <!-- Row 3: Average table -->
 <div id="average-section"></div>
+
+<!-- Row 4: Custom Map Leaderboard -->
+<div id="custom-section">
+    <h2>Custom Map Leaderboard</h2>
+    <div id="map-selector"></div>
+    <div id="custom-leaderboard"></div>
+</div>
+
 
 <script src="script.js"></script>
 </body>

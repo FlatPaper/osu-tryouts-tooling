@@ -1,4 +1,7 @@
 let rawData = null;
+let selectedPlayers = new Set();
+let selectedMaps = new Set();
+
 
 fetch("../data-tools/data/osu_scores.json")
     .then(res => res.json())
@@ -28,14 +31,86 @@ function init() {
         renderDashboard(parseInt(slider.value));
     });
 
+    generatePlayerSelector();
+    generateMapSelector();
     renderDashboard(0);
 }
+
+function generatePlayerSelector() {
+
+    const container = document.getElementById("player-selector");
+    const users = rawData.users;
+
+    const playerList = Object.values(users)
+        .sort((a, b) => a.username.localeCompare(b.username));
+
+    container.innerHTML = playerList.map(user => `
+        <label>
+            <input type="checkbox" value="${user.user_id}" checked />
+            ${user.username}
+        </label>
+    `).join("");
+
+    // Default: all selected
+    selectedPlayers.clear();
+    playerList.forEach(user => {
+        selectedPlayers.add(user.user_id);
+    });
+
+    // Checkbox listeners
+    container.querySelectorAll("input").forEach(cb => {
+        cb.addEventListener("change", () => {
+            const id = parseInt(cb.value);
+
+            if (cb.checked) {
+                selectedPlayers.add(id);
+            } else {
+                selectedPlayers.delete(id);
+            }
+
+            renderDashboard(parseInt(document.getElementById("dropSlider").value));
+        });
+    });
+
+    /* =========================
+       Select / Clear Buttons
+       ========================= */
+
+    const selectAllBtn = document.getElementById("select-all");
+    const clearAllBtn = document.getElementById("clear-all");
+
+    selectAllBtn.addEventListener("click", () => {
+        selectedPlayers.clear();
+
+        container.querySelectorAll("input").forEach(cb => {
+            cb.checked = true;
+            selectedPlayers.add(parseInt(cb.value));
+        });
+
+        renderDashboard(parseInt(document.getElementById("dropSlider").value));
+    });
+
+    clearAllBtn.addEventListener("click", () => {
+        selectedPlayers.clear();
+
+        container.querySelectorAll("input").forEach(cb => {
+            cb.checked = false;
+        });
+
+        renderDashboard(parseInt(document.getElementById("dropSlider").value));
+    });
+}
+
+
 
 function renderDashboard(dropCount) {
 
     const mapsRow = document.getElementById("maps-row");
     const droppedRow = document.getElementById("dropped-row");
     const avgSection = document.getElementById("average-section");
+    const customSection = document.getElementById("custom-leaderboard");
+    customSection.innerHTML = "";
+
 
     mapsRow.innerHTML = "";
     droppedRow.innerHTML = "";
@@ -55,6 +130,7 @@ function renderDashboard(dropCount) {
     const dropped = new Set();
 
     for (const userId in players) {
+        if (!selectedPlayers.has(parseInt(userId))) continue;
         const sorted = [...players[userId].scores]
             .sort((a, b) => a.score - b.score);
 
@@ -72,6 +148,7 @@ function renderDashboard(dropCount) {
         const mapScores = [];
 
         for (const userId in players) {
+            if (!selectedPlayers.has(parseInt(userId))) continue;
             const score = players[userId].scores.find(
                 s => s.beatmap_id === map.beatmap_id
             );
@@ -130,6 +207,7 @@ function renderDashboard(dropCount) {
         const droppedScores = [];
 
         for (const userId in players) {
+            if (!selectedPlayers.has(parseInt(userId))) continue;
             const score = players[userId].scores.find(
                 s => s.beatmap_id === map.beatmap_id
             );
@@ -186,6 +264,7 @@ function renderDashboard(dropCount) {
     const averages = [];
 
     for (const userId in players) {
+        if (!selectedPlayers.has(parseInt(userId))) continue;
 
         const skipped = [];
         const kept = [];
@@ -254,6 +333,98 @@ function renderDashboard(dropCount) {
       </table>
     `;
 
+    /* =========================
+   ROW 4 — CUSTOM LEADERBOARD
+   ========================= */
+
+    if (selectedMaps.size > 0) {
+
+        const customResults = [];
+
+        for (const userId in players) {
+            if (!selectedPlayers.has(parseInt(userId))) continue;
+
+            const scores = players[userId].scores
+                .filter(s => selectedMaps.has(s.beatmap_id));
+
+            if (!scores.length) continue;
+
+            const avgScore =
+                scores.reduce((sum, s) => sum + s.score, 0) / scores.length;
+
+            const avgAcc =
+                scores.reduce((sum, s) => sum + s.accuracy, 0) / scores.length;
+
+            customResults.push({
+                username: users[userId]?.username ?? "Unknown",
+                avgScore,
+                avgAcc,
+                mapsPlayed: scores.length
+            });
+        }
+
+        customResults.sort((a, b) => b.avgScore - a.avgScore);
+
+        customSection.innerHTML = `
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Average Score</th>
+                    <th>Average Acc</th>
+                    <th>Maps Used</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${customResults.map((entry, i) => `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${entry.username}</td>
+                        <td>${Math.round(entry.avgScore).toLocaleString()}</td>
+                        <td>${entry.avgAcc.toFixed(2)}%</td>
+                        <td>${entry.mapsPlayed}</td>
+                    </tr>
+                `).join("")}
+            </tbody>
+        </table>
+    `;
+    }
+
+
+}
+
+function generateMapSelector() {
+
+    const container = document.getElementById("map-selector");
+
+    const maps = Object.values(rawData.maps)
+        .sort((a, b) => {
+            const groupDiff = getSlotOrder(a.slot) - getSlotOrder(b.slot);
+            if (groupDiff !== 0) return groupDiff;
+            return a.slot.localeCompare(b.slot, undefined, { numeric: true });
+        });
+
+
+    container.innerHTML = maps.map(map => `
+        <label>
+            <input type="checkbox" value="${map.beatmap_id}" />
+            ${map.slot}
+        </label>
+    `).join("");
+
+    container.querySelectorAll("input").forEach(cb => {
+        cb.addEventListener("change", () => {
+            const id = parseInt(cb.value);
+            if (cb.checked) {
+                selectedMaps.add(id);
+            } else {
+                selectedMaps.delete(id);
+            }
+
+            renderDashboard(parseInt(document.getElementById("dropSlider").value));
+        });
+    });
 }
 
 

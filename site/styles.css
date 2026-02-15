@@ -108,3 +108,49 @@ td:first-child {
 td:nth-child(4) {
     font-weight: 500;
 }
+
+#custom-section {
+    margin-top: 40px;
+    max-width: 700px;
+}
+
+#map-selector {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+#map-selector label {
+    font-size: 13px;
+}
+
+#custom-leaderboard table {
+    background: white;
+}
+
+#player-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 8px;
+}
+
+#player-selector label {
+    font-size: 13px;
+}
+
+.player-buttons {
+    margin-bottom: 8px;
+}
+
+.player-buttons button {
+    padding: 4px 8px;
+    margin-right: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
