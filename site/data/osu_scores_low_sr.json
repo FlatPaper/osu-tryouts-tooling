@@ -148,6 +148,10 @@
             "user_id": 19531136,
             "username": "hhhahe"
         },
+        "18357479": {
+            "user_id": 18357479,
+            "username": "jykca"
+        },
         "17241883": {
             "user_id": 17241883,
             "username": "ExiaXD"
@@ -207,6 +211,22 @@
         "16333094": {
             "user_id": 16333094,
             "username": "kurisu simp"
+        },
+        "14375764": {
+            "user_id": 14375764,
+            "username": "Eriko"
+        },
+        "35257701": {
+            "user_id": 35257701,
+            "username": "Maijirhythm"
+        },
+        "9325602": {
+            "user_id": 9325602,
+            "username": "samdaman"
+        },
+        "16911337": {
+            "user_id": 16911337,
+            "username": "Ruan Mei"
         },
         "7641620": {
             "user_id": 7641620,
@@ -5286,6 +5306,140 @@
                 }
             ]
         },
+        "18357479": {
+            "user_id": 18357479,
+            "username": "jykca",
+            "scores": [
+                {
+                    "match_id": 120535929,
+                    "game_id": 0,
+                    "beatmap_id": 3156822,
+                    "score": 688663,
+                    "accuracy": 99.23,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 1,
+                    "beatmap_id": 4497325,
+                    "score": 943109,
+                    "accuracy": 98.33,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 2,
+                    "beatmap_id": 4419833,
+                    "score": 363029,
+                    "accuracy": 93.72,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 3,
+                    "beatmap_id": 3836349,
+                    "score": 921375,
+                    "accuracy": 97.77,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 4,
+                    "beatmap_id": 5181842,
+                    "score": 809896,
+                    "accuracy": 95.64,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 5,
+                    "beatmap_id": 3441090,
+                    "score": 649093,
+                    "accuracy": 98.57,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 6,
+                    "beatmap_id": 3733865,
+                    "score": 537067,
+                    "accuracy": 95.56,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 7,
+                    "beatmap_id": 2718270,
+                    "score": 926732,
+                    "accuracy": 94.99,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 8,
+                    "beatmap_id": 2154194,
+                    "score": 1005602,
+                    "accuracy": 97.41,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 9,
+                    "beatmap_id": 3799631,
+                    "score": 930789,
+                    "accuracy": 94.9,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 10,
+                    "beatmap_id": 5494216,
+                    "score": 567518,
+                    "accuracy": 92.46,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 11,
+                    "beatmap_id": 3142329,
+                    "score": 459693,
+                    "accuracy": 93.27,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 12,
+                    "beatmap_id": 2197544,
+                    "score": 575445,
+                    "accuracy": 96.87,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 13,
+                    "beatmap_id": 4809344,
+                    "score": 981424,
+                    "accuracy": 97.69,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 14,
+                    "beatmap_id": 5235323,
+                    "score": 807642,
+                    "accuracy": 95.43,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120535929,
+                    "game_id": 15,
+                    "beatmap_id": 4308932,
+                    "score": 774712,
+                    "accuracy": 98.37,
+                    "mods": 0
+                }
+            ]
+        },
         "17241883": {
             "user_id": 17241883,
             "username": "ExiaXD",
@@ -7292,6 +7446,534 @@
                     "beatmap_id": 4308932,
                     "score": 483845,
                     "accuracy": 97.61,
+                    "mods": 1
+                }
+            ]
+        },
+        "14375764": {
+            "user_id": 14375764,
+            "username": "Eriko",
+            "scores": [
+                {
+                    "match_id": 120534781,
+                    "game_id": 0,
+                    "beatmap_id": 3156822,
+                    "score": 664511,
+                    "accuracy": 99.18,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 1,
+                    "beatmap_id": 4497325,
+                    "score": 478714,
+                    "accuracy": 97.69,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 2,
+                    "beatmap_id": 4419833,
+                    "score": 153282,
+                    "accuracy": 88.46,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 3,
+                    "beatmap_id": 3836349,
+                    "score": 309604,
+                    "accuracy": 93.1,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 4,
+                    "beatmap_id": 5181842,
+                    "score": 391927,
+                    "accuracy": 96.51,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 5,
+                    "beatmap_id": 3441090,
+                    "score": 173747,
+                    "accuracy": 91.19,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 6,
+                    "beatmap_id": 3733865,
+                    "score": 22666,
+                    "accuracy": 47.94,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 7,
+                    "beatmap_id": 2718270,
+                    "score": 546388,
+                    "accuracy": 95.76,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 8,
+                    "beatmap_id": 2154194,
+                    "score": 752147,
+                    "accuracy": 96.04,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 9,
+                    "beatmap_id": 3799631,
+                    "score": 384101,
+                    "accuracy": 94.67,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 10,
+                    "beatmap_id": 5494216,
+                    "score": 685076,
+                    "accuracy": 94.56,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 11,
+                    "beatmap_id": 3142329,
+                    "score": 209399,
+                    "accuracy": 89.44,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 12,
+                    "beatmap_id": 2197544,
+                    "score": 487740,
+                    "accuracy": 94.66,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 13,
+                    "beatmap_id": 4809344,
+                    "score": 990802,
+                    "accuracy": 96.83,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 14,
+                    "beatmap_id": 5235323,
+                    "score": 629732,
+                    "accuracy": 96.98,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120534781,
+                    "game_id": 15,
+                    "beatmap_id": 4308932,
+                    "score": 392957,
+                    "accuracy": 96.82,
+                    "mods": 0
+                }
+            ]
+        },
+        "35257701": {
+            "user_id": 35257701,
+            "username": "Maijirhythm",
+            "scores": [
+                {
+                    "match_id": 120537681,
+                    "game_id": 0,
+                    "beatmap_id": 3156822,
+                    "score": 351901,
+                    "accuracy": 97.22,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 1,
+                    "beatmap_id": 4497325,
+                    "score": 74081,
+                    "accuracy": 79.87,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 2,
+                    "beatmap_id": 4419833,
+                    "score": 183476,
+                    "accuracy": 90.16,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 3,
+                    "beatmap_id": 3836349,
+                    "score": 185410,
+                    "accuracy": 90.17,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 4,
+                    "beatmap_id": 5181842,
+                    "score": 44195,
+                    "accuracy": 73.84,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 5,
+                    "beatmap_id": 3441090,
+                    "score": 245310,
+                    "accuracy": 93.77,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 6,
+                    "beatmap_id": 3733865,
+                    "score": 281372,
+                    "accuracy": 93.02,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 7,
+                    "beatmap_id": 2718270,
+                    "score": 161664,
+                    "accuracy": 87.79,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 8,
+                    "beatmap_id": 2154194,
+                    "score": 210066,
+                    "accuracy": 88.69,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 9,
+                    "beatmap_id": 3799631,
+                    "score": 158576,
+                    "accuracy": 86.03,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 10,
+                    "beatmap_id": 5494216,
+                    "score": 92095,
+                    "accuracy": 77.38,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 11,
+                    "beatmap_id": 3142329,
+                    "score": 38558,
+                    "accuracy": 69.57,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 12,
+                    "beatmap_id": 2197544,
+                    "score": 353263,
+                    "accuracy": 95.47,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 13,
+                    "beatmap_id": 4809344,
+                    "score": 451334,
+                    "accuracy": 98.12,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537681,
+                    "game_id": 14,
+                    "beatmap_id": 5235323,
+                    "score": 221511,
+                    "accuracy": 88.82,
+                    "mods": 0
+                }
+            ]
+        },
+        "9325602": {
+            "user_id": 9325602,
+            "username": "samdaman",
+            "scores": [
+                {
+                    "match_id": 120537779,
+                    "game_id": 0,
+                    "beatmap_id": 3156822,
+                    "score": 534406,
+                    "accuracy": 98.97,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 1,
+                    "beatmap_id": 4497325,
+                    "score": 409805,
+                    "accuracy": 95.42,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 2,
+                    "beatmap_id": 4419833,
+                    "score": 116476,
+                    "accuracy": 82.05,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 3,
+                    "beatmap_id": 3836349,
+                    "score": 340714,
+                    "accuracy": 93.63,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 4,
+                    "beatmap_id": 5181842,
+                    "score": 399224,
+                    "accuracy": 91.22,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 5,
+                    "beatmap_id": 3441090,
+                    "score": 334096,
+                    "accuracy": 91.21,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 6,
+                    "beatmap_id": 3733865,
+                    "score": 23662,
+                    "accuracy": 56.76,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 7,
+                    "beatmap_id": 2718270,
+                    "score": 197503,
+                    "accuracy": 89.04,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 8,
+                    "beatmap_id": 2154194,
+                    "score": 178544,
+                    "accuracy": 85.43,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 9,
+                    "beatmap_id": 3799631,
+                    "score": 337933,
+                    "accuracy": 92.52,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 10,
+                    "beatmap_id": 5494216,
+                    "score": 377895,
+                    "accuracy": 90.08,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 11,
+                    "beatmap_id": 3142329,
+                    "score": 152611,
+                    "accuracy": 85.08,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 12,
+                    "beatmap_id": 2197544,
+                    "score": 203970,
+                    "accuracy": 84.34,
+                    "mods": 17
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 13,
+                    "beatmap_id": 4809344,
+                    "score": 227645,
+                    "accuracy": 89.86,
+                    "mods": 1
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 14,
+                    "beatmap_id": 5235323,
+                    "score": 316747,
+                    "accuracy": 93.22,
+                    "mods": 1
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 15,
+                    "beatmap_id": 4308932,
+                    "score": 494243,
+                    "accuracy": 97.0,
+                    "mods": 1
+                }
+            ]
+        },
+        "16911337": {
+            "user_id": 16911337,
+            "username": "Ruan Mei",
+            "scores": [
+                {
+                    "match_id": 120537779,
+                    "game_id": 0,
+                    "beatmap_id": 3156822,
+                    "score": 270543,
+                    "accuracy": 94.33,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 1,
+                    "beatmap_id": 4497325,
+                    "score": 34820,
+                    "accuracy": 67.35,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 2,
+                    "beatmap_id": 4419833,
+                    "score": 206011,
+                    "accuracy": 85.61,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 3,
+                    "beatmap_id": 3836349,
+                    "score": 204570,
+                    "accuracy": 89.52,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 4,
+                    "beatmap_id": 5181842,
+                    "score": 40030,
+                    "accuracy": 68.47,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 5,
+                    "beatmap_id": 3441090,
+                    "score": 154344,
+                    "accuracy": 88.83,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 6,
+                    "beatmap_id": 3733865,
+                    "score": 139617,
+                    "accuracy": 81.36,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 7,
+                    "beatmap_id": 2718270,
+                    "score": 179818,
+                    "accuracy": 87.2,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 8,
+                    "beatmap_id": 2154194,
+                    "score": 315977,
+                    "accuracy": 89.02,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 9,
+                    "beatmap_id": 3799631,
+                    "score": 147587,
+                    "accuracy": 78.32,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 10,
+                    "beatmap_id": 5494216,
+                    "score": 40204,
+                    "accuracy": 60.2,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 11,
+                    "beatmap_id": 3142329,
+                    "score": 32869,
+                    "accuracy": 54.18,
+                    "mods": 0
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 12,
+                    "beatmap_id": 2197544,
+                    "score": 181217,
+                    "accuracy": 84.45,
+                    "mods": 17
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 13,
+                    "beatmap_id": 4809344,
+                    "score": 430383,
+                    "accuracy": 92.39,
+                    "mods": 17
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 14,
+                    "beatmap_id": 5235323,
+                    "score": 75395,
+                    "accuracy": 71.6,
+                    "mods": 17
+                },
+                {
+                    "match_id": 120537779,
+                    "game_id": 15,
+                    "beatmap_id": 4308932,
+                    "score": 28291,
+                    "accuracy": 37.85,
                     "mods": 1
                 }
             ]
